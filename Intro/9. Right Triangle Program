@@ -1,0 +1,46 @@
+/******************************************************************************
+
+Create a Java# program that will ask the user to enter values for base and height 
+of a right triangle. Thereafter, the program will display the correct area of 
+the right triangle. Put the formula in a method called rightTriangle. The main 
+method should only display the output. Copy the code from your IDE then paste 
+the code in the text box provided. 
+
+//Sample Input:
+
+Enter base =               (assuming I will press 5 and press the enter key)
+Enter height =           (assuming I will press 5 and press the enter key)
+
+//Processing: DO NOT CHANGE THIS FORMULA  area = (base*height)/2
+
+//Sample output:
+
+The area of the right triangle = 12.5
+
+*******************************************************************************/
+import java.util.Scanner;
+public class Main
+{
+	public static void rightTriangle(){
+	    Scanner myScan = new Scanner(System.in);
+	    float base, height, area;
+	    
+	    System.out.print("Input base: ");
+	    base = myScan.nextFloat();
+	    
+	    System.out.println();
+	    System.out.print("Input height: ");
+	    height = myScan.nextFloat();
+	    
+	    area = (base * height)/2;
+	    System.out.println();
+	    System.out.println("The area of the right triangle = " + area);
+	}
+	
+	public static void main(String[] args) {
+	    
+		rightTriangle();
+	}
+}
+
+

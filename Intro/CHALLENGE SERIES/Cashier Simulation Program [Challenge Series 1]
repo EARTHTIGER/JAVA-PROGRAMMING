@@ -1,0 +1,253 @@
+/******************************************************************************
+
+Create a C# program that will display the change for a sale transaction. Use 
+the current denomination here in the Philippines. 
+
+Denomination:
+
+P1,000.00
+P500.00
+P200.00
+P100.00
+P50.00
+P20.00
+P10.00
+P5.00
+P1.00
+P0.50
+P0.25
+P0.10
+P0.05
+
+Use the highest denomination available before using anything else. 
+
+Example:
+
+A customer gave you a P1,500.00 peso bill for a grocery worth P1,375.15.
+Your program should have an output of:
+Your change is P124.85.
+
+The machine will now dispense your change:
+100 x 1 = P100.00
+20 x 1 = P20.00
+1 x 4 = P4.00
+0.50 x 1 = P0.50
+0.25 x 1 = P0.25
+0.10 x 1 = P0.10
+ --------------------
+                   P124.85
+
+
+Rubrics:
+
+Use of Methods - 10
+Correct Output - 5
+Logically Correct - 5
+Checked by the Instructor - 10
+Total: 30 Points
+
+*******************************************************************************/
+import java.util.*;
+import java.util.Scanner;
+public class Main
+{
+    public static double grocerybill, worth, change, bill;
+    
+    public static void costDenomination(){
+        int i;
+        for(i = 0; change >= 1000; ){
+            if(change >= 1000){
+                change = change - 1000;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("1000 x " + i + " = P" + i * 1000 + ".00");
+        }
+        
+        for(i = 0; change >= 500; ){
+            if(change >= 500){
+                change = change - 500;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("500 x " + i + " = P" + i * 500 + ".00");
+        }
+        
+        for(i = 0; change >= 200; ){
+            if(change >= 200){
+                change = change - 200;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("200 x " + i + " = P" + i * 200 + ".00");
+        }
+        
+        for(i = 0; change >= 100; ){
+            if(change >= 100){
+                change = change - 100;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("100 x " + i + " = P" + i * 100 + ".00");
+        }
+        
+        for(i = 0; change >= 50; ){
+            if(change >= 50){
+                change = change - 50;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("50 x " + i + " = P" + i * 50 + ".00");
+        }
+        
+        for(i = 0; change >= 20; ){
+            if(change >= 20){
+                change = change - 20;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("20 x " + i + " = P" + i * 20 + ".00");
+        }
+        
+        for(i = 0; change >= 10; ){
+            if(change >= 10){
+                change = change - 10;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("10 x " + i + " = P" + i * 10 + ".00");
+        }
+        
+        for(i = 0; change >= 5; ){
+            if(change >= 5){
+                change = change - 5;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("5 x " + i + " = P" + i * 5 + ".00");
+        }
+        
+        for(i = 0; change >= 1; ){
+            if(change >= 1){
+                change = change - 1;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("1 x " + i + " = P" + i * 1 + ".00");
+        }
+        
+        for(i = 0; change >= 0.50; ){
+            if(change >= 0.50){
+                change = change - 0.50;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("0.50 x " + i + " = P" + i * 0.50);
+        }
+        
+        for(i = 0; change >= 0.25; ){
+            if(change >= 0.25){
+                change = change - 0.25;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("0.25 x " + i + " = P" + i * 0.25);
+        }
+        
+        for(i = 0; change >= 0.10; ){
+            if(change >= 0.10){
+                change = change - 0.10;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("0.10 x " + i + " = P" + i * 0.10);
+        }
+        
+        for(i = 0; change >= 0.05; ){
+            if(change >= 0.05){
+                change = change - 0.05;
+            }
+            i++;
+        }
+        
+        if(i != 0){
+            System.out.println("0.05 x " + i + " = P" + i * 0.05);
+        }
+    }
+    
+	public static void main(String[] args) {
+	    Scanner myScan = new Scanner(System.in);
+	    char choice;
+	     System.out.println("****************************");
+	     System.out.println(" CASHIER SIMULATION PROGRAM ");
+	     System.out.println("****************************");
+	     
+	     try{
+	         do{
+	             System.out.print("Grocery Worth: P");
+	             worth = myScan.nextDouble();
+	             
+	             System.out.print("Costumer Payment: P");
+	             grocerybill = myScan.nextDouble();
+	             
+	             change = grocerybill - worth;
+	             bill = grocerybill - worth;
+	             
+	             if(worth > grocerybill){
+	                 System.out.println("Oops, Costumer bill is lower than worth!");
+	             }else{
+	                 System.out.println();
+	                 System.out.println("Your change is: P" + bill);
+	                 System.out.println();
+	                 System.out.println("The machine will now dispense your change: ");
+	                 costDenomination();
+	             }
+	             
+	             System.out.println("-------------------------");
+	             System.out.println("           P" + bill);
+	             
+	             System.out.println();
+	             System.out.print("Do another simulation? Y/N: ");
+	             choice = myScan.next().charAt(0);
+	         }while(choice == 'Y'|choice == 'y');
+	         
+	     }catch(Exception e){
+	         System.out.println();
+	         System.out.println("Error unknown command have been pressed");
+	         System.out.println("Pls. make sure to input numbers only!");
+	         System.out.println("System will now exit............."
+	                          + "\nInput key to restart the program");
+	     }
+	}
+}
+
+
+
+
+
+
+

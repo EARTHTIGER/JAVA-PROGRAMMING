@@ -1,0 +1,152 @@
+/******************************************************************************
+
+Create a program name simple bank transaction program that allows users to
+chech balance inquiry, deposit, withdraw, and exit the system. 
+
+example:
+
+1 - Check balance inquiry       3 - Withdraw 
+2 - desposit                    4 - exit
+
+choose transactions from above: 3
+
+withdraw
+current ballance: P0
+input the ammount to withdraw: P400
+
+Sorry you dont have enough balance in your account to withdraw
+notify administrators if you have encountered any errors.
+
+have another transaction? Y/N? Y
+
+
+1 - Check balance inquiry       3 - Withdraw 
+2 - desposit                    4 - exit
+
+choose transactions from above: 2
+
+deposit
+current ballance: P0.00
+input the ammount to deposit: P400.00
+
+great!, transaction proccessed!
+your current ballance is P400.00
+
+have another transaction? Y/N? N
+*******************************************************************************/
+import java.util.Scanner;
+public class Main
+{
+    public static int dep = 0, bal = 0, witd;
+    
+    public static void myBalance(){
+        
+        System.out.println();
+        System.out.println("*********************");
+        System.out.println("    B.A.L.A.N.C.E    ");
+        System.out.println("*********************");
+        System.out.println();
+        
+        System.out.println("Current Balance: P" + bal + ".00");
+    }
+    
+    public static void myDeposit(){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println();
+        System.out.println("*********************");
+        System.out.println("    D.E.P.O.S.I.T    ");
+        System.out.println("*********************");
+        System.out.println();
+        
+        try{
+            System.out.print("Input the ammount to deposit: P");
+            dep = sc.nextInt();
+            
+            bal = bal + dep;
+            System.out.println("Current Balance: P" + bal + ".00");
+        }catch(Exception e){
+            System.out.println();
+            System.out.println("Invalid Input\nNumbers Only");
+        }
+    }
+    
+    public static void myWithdrawal(){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println();
+        System.out.println("*********************");
+        System.out.println("   W.I.T.H.D.R.A.W   ");
+        System.out.println("*********************");
+        System.out.println();
+        
+        try{
+            System.out.print("Input the ammount to withdraw: P");
+            witd = sc.nextInt();
+            
+            if(witd > bal){
+                System.out.println("Insufficient Balance! ");
+            }else{
+                bal = bal - witd;
+                System.out.println("Current Balance: P" + bal + ".00");
+            }
+        }catch(Exception e){
+            System.out.println();
+            System.out.println("Invalid Input\nNumbers Only");
+        }
+    }
+    
+	public static void main(String[] args) {
+	    Scanner myScan = new Scanner(System.in);
+	    int menu; char choice;
+	    do{
+	       System.out.println("***************************");
+	       System.out.println("       P.R.O.G.R.A.M       ");
+	       System.out.println("  SIMPLE BANK TRANSACTION  ");
+	       System.out.println("***************************");
+	       
+	       System.out.println();
+	       System.out.println("          M.E.N.U          ");
+	       System.out.println("...........................");
+	       System.out.println("check balance [1]"
+		                    + "\ndeposit       [2]"
+		                    + "\nwithdraw      [3]"
+		                    + "\nexit          [4]");
+        
+            System.out.println("...........................");
+            System.out.print("\nChoose transaction from above: ");
+            menu = myScan.nextInt();
+            
+            switch(menu){
+                case 1:
+                    myBalance();
+                    break;
+                    
+                case 2:
+                    myDeposit();
+                    break;
+                    
+                case 3:
+                    myWithdrawal();
+                    break;
+                    
+                case 4:
+                    System.out.println("Transaction done!");
+                    System.exit(0);
+                    break;
+                    
+                default:
+                    System.out.println("Error!, input no in choices.");
+                    break;
+            }
+            System.out.println();
+            System.out.print("Have another transaction? Y/N: ");
+            choice = myScan.next().charAt(0);
+	        }while(choice == 'Y' | choice == 'y');
+	        System.out.println("Transaction done!");
+	}
+}
+
+
+
+

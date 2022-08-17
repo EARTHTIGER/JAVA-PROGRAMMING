@@ -1,0 +1,56 @@
+/******************************************************************************
+
+With user input, create a program that converts the following 
+
+Widening:
+1. int to long 
+2. long to float
+3. float to double
+
+Narrowing: 
+1. double to float
+2. float to long
+3. long to int
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		Scanner myScan = new Scanner(System.in);
+		
+		System.out.print("Input a number: ");
+		int num = myScan.nextInt();
+		System.out.println(" ");
+		
+	    System.out.println("***************");
+		System.out.println("Widening");
+		System.out.println("***************");
+		
+		long toLong = num;
+		float toFloat = toLong;
+		double toDouble = toFloat;
+		
+		System.out.println("To Long: " + toLong);
+		
+		System.out.println("To Float: " + toFloat);
+		
+		System.out.println("To Double: " + toDouble);
+		
+		System.out.println(" ");
+		System.out.println("***************");
+		System.out.println("Narrowing");
+		System.out.println("***************");
+		
+		double myDouble = (double) num;
+		float myFloat = (float) myDouble;
+		long myLong = (long) myFloat;
+		int myInt = (int) myLong;
+		
+		System.out.println("To Float: " + myFloat);
+		System.out.println("To Long: " + myLong);
+		System.out.println("To Int: " + myInt);
+	}
+}
+
+

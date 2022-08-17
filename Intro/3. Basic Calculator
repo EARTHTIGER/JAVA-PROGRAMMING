@@ -1,0 +1,24 @@
+/******************************************************************************
+
+Create a program that Calculates basic arithmetic operations (+ , - , * , / , %)
+
+*******************************************************************************/
+public class Main
+{
+	public static void main(String[] args) {
+		int fnum = 20;
+		int snum = 53; 
+		int tnum = 89;
+		
+		System.out.println("Calculate (20, 53, 89)");
+		
+		System.out.println("Output:");
+		System.out.println("Addition: " + (20 + 53 + 89));
+		System.out.println("Subtraction: " + (89 - 59 - 20));
+		System.out.println("Multiplication: " + (20 * 53 * 89));
+		System.out.println("Division: " + (89 / 53 / 20));
+		System.out.println("Modulo: " + (20 % 53 % 89));
+	}
+}
+
+

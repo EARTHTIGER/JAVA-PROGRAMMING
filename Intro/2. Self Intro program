@@ -1,0 +1,33 @@
+/******************************************************************************
+
+Create a program that introduces yourself using variables and data types, Be
+Creative!
+
+*******************************************************************************/
+public class Main
+{
+	public static void main(String[] args) {
+		
+		String Fname = "SQU";
+		String Lname = "ID";
+		
+		int Age = 23;
+		
+		String Major = "NetSec";
+		String Course = "BSIT";
+		
+		float Tfee = 23500.00f;
+		System.out.println("******************");
+		System.out.println("My Self Intro");
+		System.out.println("******************");
+		System.out.println("\nHi I am " + Fname + Lname 
+		                  + "\nI am " + Age 
+		                  + "\nMajor in " + Major
+		                  + "\nmy Course is " + Course
+		                  + "\nand my Tuition fee for this semester is " + Tfee);
+	}
+}
+
+
+
+

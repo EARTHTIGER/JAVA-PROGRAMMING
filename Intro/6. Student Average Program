@@ -1,0 +1,60 @@
+/******************************************************************************
+
+Create a program that ask for the student grade in (english, math, history, science,
+and P.E.H) then calculate the average results and print if the student passed or not
+
+example output:
+
+Input grades to get average results: 
+
+English: 78 
+Math: 78
+History: 75
+Science: 78
+P.E.H: 89
+
+Average: 79.6
+
+Marks: Passed
+
+*******************************************************************************/
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner myScan = new Scanner(System.in);
+		
+		float average, english, math, history, science, peh;
+		
+		System.out.println("Input grades to get average results:");
+		System.out.print("English: ");
+		english = myScan.nextFloat();
+
+		System.out.print("Math: ");
+		math = myScan.nextFloat();
+
+		System.out.print("History: ");
+		history = myScan.nextFloat();
+
+		System.out.print("Science: ");
+		science = myScan.nextFloat();
+		
+		System.out.print("P.E and Health: ");
+		peh = myScan.nextFloat();
+		System.out.println();
+		
+		average = (english + math + history + science + peh)/5;
+		System.out.println("Average: " + average);
+		
+		if(average > 100){
+		    System.out.println("Invalid Grade");
+		}else if(average >= 75){
+		    System.out.println("Marks: Passed");
+		}else{
+		    System.out.println("Marks: Failed");
+		    System.out.println("Bawe next Life");
+		}
+	}
+}
+
+

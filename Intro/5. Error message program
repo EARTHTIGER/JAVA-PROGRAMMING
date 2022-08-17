@@ -1,0 +1,49 @@
+/******************************************************************************
+
+Create a java calculator program that displays an error message whenever the user
+inputs a letter / word, example output:
+
+*******************************************************************************/
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner myScan = new Scanner(System.in);
+		
+		int fnum, snum;
+		
+		try{
+		    
+		    System.out.print("Input first number: ");
+		    fnum = myScan.nextInt();
+		
+	        System.out.print("Input second number: ");
+	        snum = myScan.nextInt();
+	        
+	        System.out.println( );
+	        System.out.println("Results: ");
+	        System.out.println( );
+	        //addition
+	        System.out.println(fnum +  " + " + snum + ": " + (fnum + snum));
+	        
+	        //subtraction
+	        System.out.println(fnum +  " - " + snum + ": " + (fnum - snum));
+	        
+	        //multiplication
+	        System.out.println(fnum +  " * " + snum + ": " + (fnum * snum));
+	        
+	        //division
+	        System.out.println(fnum +  " / " + snum + ": " + (fnum / snum));
+	        
+	        //modulo
+	        System.out.println(fnum +  " % " + snum + ": " + (fnum % snum));
+	        
+		}catch(Exception e){
+		    System.out.println("Error, Numbers only pls.");
+		}
+	
+	    
+	}
+}
+
+

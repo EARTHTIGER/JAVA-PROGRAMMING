@@ -1,0 +1,47 @@
+/******************************************************************************
+
+Using loops create a java programs implementing (for, while,and 
+do while loop) that displays numbers 1 - 10 horizontally.
+
+Example: 
+
+1
+2
+3
+...
+10
+
+*******************************************************************************/
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Print 10 numbers using for loop");
+		for(int i = 1; i <= 10; i++){
+		    System.out.println("Number: " + i);
+		}
+		
+/******************************************************************************/
+		
+		System.out.println();
+		System.out.println("Print 10 numbers using while loop");
+		
+		int j = 0;
+		while(j <= 10){
+		    System.out.println("Number: " + j);
+		    j++;
+		}
+		
+/******************************************************************************/
+	
+	    System.out.println();
+		System.out.println("Print 10 numbers using Do while loop");
+		int k = 0;
+		do{
+		    System.out.println("Number: " + k);
+		    k++;
+		}while(k <= 10);
+	}
+		
+}
+
+

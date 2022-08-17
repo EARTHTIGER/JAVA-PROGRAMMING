@@ -1,0 +1,63 @@
+/******************************************************************************
+
+Using switch statement create a java program named calculator that performs basic operations,
+must use (+ - * /  and %). 
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+  public static void main (String[]args)
+  {
+    Scanner myScan = new Scanner (System.in);
+
+    int fnum, snum, results = 0;
+    char operator;
+
+      System.out.print ("Input first number: ");
+      fnum = myScan.nextInt ();
+
+      System.out.print ("Input second number: ");
+      snum = myScan.nextInt ();
+    
+    System.out.println();  
+    System.out.println("Operation menus");
+    System.out.println("Addition          [+]"
+                     + "\nSubtraction       [-]"
+                     + "\nMultiplication    [*]"
+                     + "\nDivision          [/]"
+                     + "\nModulo            [%]");
+    
+    System.out.println();                 
+    System.out.print("Choose an operator: ");
+    operator = myScan.next().charAt(0);
+    
+    switch (operator)
+      {
+        case '+':
+	        results = fnum + snum;
+	        break;
+	    case '-':
+	        results = fnum - snum;
+	        break;
+	    case '*':
+	        results = fnum * snum;
+	        break;
+	    case '/':
+	        results = fnum / snum;
+	        break;
+	    case '%':
+	        results = fnum % snum;
+	        break;
+	    default:
+	        System.out.println("Error, Operator incorrect!");
+	        break;
+      }
+      System.out.println();   
+      System.out.println("Results: ");
+      System.out.println(fnum + " " + operator + " "+ snum + " = " + results);
+  }
+}
+
+
+

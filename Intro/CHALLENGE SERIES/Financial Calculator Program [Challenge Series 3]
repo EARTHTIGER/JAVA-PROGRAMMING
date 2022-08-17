@@ -1,0 +1,255 @@
+/******************************************************************************
+
+Create a program in java that calculates the following:
+
+1. Savings Calculator
+2. Loan Calculator
+3. Investment Income Calculator
+4. Currency Converter 
+
+*******************************************************************************/
+import java.util.Scanner;
+import java.text.DecimalFormat;
+public class Main
+{
+    //SAVINGS
+    public static void savings(){
+        Scanner myScan = new Scanner(System.in);
+        
+        double ammount, interest, currentbalance = 0;
+        int month;
+        
+        System.out.println("*********************************");
+        System.out.println("S.A.V.I.N.G.S-C.A.L.C.U.L.A.T.O.R");
+        System.out.println("*********************************");
+        
+        System.out.println();
+        System.out.print("Input the monthly savings ammount: P");
+        ammount = myScan.nextDouble();
+              
+        System.out.print("Enter the annual interest rate in percentage: ");
+        interest = myScan.nextDouble();
+              
+        System.out.print("Enter number of savings [months]: ");
+        month = myScan.nextInt();
+        
+        for(int i = 0; i <= month; i++){
+            currentbalance = (currentbalance + ammount) * (1 + (interest/12)/100);
+        }
+              
+        System.out.println();
+        System.out.println("The savings account balance after " 
+                        + month + (month==1?"month":" months") + " is P" 
+                        + Math.round(currentbalance*1000.0)/1000.0);
+    }
+    
+    //LOANS
+    public static void loan(){
+        Scanner myScan = new Scanner(System.in);
+        
+        double interest, ammount, Mpayment = 0, Tpayment = 0;
+        int year;
+        System.out.println("***************************");
+        System.out.println("L.O.A.N-C.A.L.C.U.L.A.T.O.R");
+        System.out.println("***************************");
+        
+        System.out.println();
+        System.out.print("Input interest rate: ");
+        interest = myScan.nextDouble();
+        
+        System.out.print("Input number of year: ");
+        year = myScan.nextInt();
+        
+        // Ammount can also be called as PRINCIPAL [do not be confused]
+        System.out.print("Input ammount of loan: P");
+        ammount = myScan.nextDouble(); 
+        
+        interest = (interest/100)/12;
+        year = year * 12;
+        Mpayment = (ammount * interest) / (1 - Math.pow(1 + interest, - year));
+         
+        System.out.println();
+        System.out.println("Loan of P" + ammount + " PHP");
+        System.out.println("Payable in " + year + " months");
+        System.out.println("Monthly Payment: P" + Mpayment + " PHP");
+        System.out.println("Total ammount of payment P" + (Mpayment * year)+ " PHP");
+        
+    }
+    
+    //INVESTMENTS
+    public static void investment(){
+        Scanner myScan = new Scanner(System.in);
+        double ammount, interest, value = 0;
+        int years;
+        System.out.println("****************************************");
+        System.out.println("I.N.V.E.S.T.M.E.N.T-.C.A.L.C.U.L.A.T.O.R");
+        System.out.println("****************************************");
+        
+        System.out.println();
+        System.out.print("Input investment ammount: P");
+        ammount = myScan.nextDouble();
+        
+        System.out.print("Input annual interest rate in percentage: ");
+        interest = myScan.nextDouble();
+        
+        System.out.print("Input number of years: ");
+        years = myScan.nextInt();
+        
+        value = ammount * Math.pow((1 + (interest /1200)), (years * 12));
+        value = (int) (value * 100) / 100.0;
+        
+        System.out.println();
+        System.out.println("Accumulated value is P" + value);
+    }
+    
+    //CURRENCY CONVERTER
+    public static void currency(){
+        double menu, amount, php, dollar, yen, yuan,won;
+        DecimalFormat f = new DecimalFormat("##.##");
+        Scanner myScan = new Scanner(System.in);
+        
+        System.out.println();
+        System.out.println("*********************************");
+        System.out.println("C.U.R.R.E.N.C.Y-C.O.N.V.E.R.T.E.R");
+        System.out.println("*********************************");
+        System.out.println();
+        System.out.println("Philippines (Php)       [1]"
+                       + "\nUnited States (Dollar)  [2]"
+                       + "\nJapan (Yen)             [3]"
+                       + "\nChina (Yuan)            [4]"
+                       + "\nKorea (Won)             [5]");
+        System.out.println();
+        System.out.print("Choose from the menu to convert: ");
+        menu = myScan.nextDouble();
+        
+        System.out.print("Input the ammount of money to convert: ");
+        amount = myScan.nextDouble();
+        System.out.println();
+        
+        //ammount conversion
+        if(menu == 1){
+            dollar = amount * 0.018066;
+            System.out.println("Peso to Dollar = " + dollar + " USD");
+            yen = amount * 2.3865;
+            System.out.println("Peos to Yen = " + yen + " JPY");
+            yuan = amount * 0.1377525106;
+            System.out.println("Peos to Yuan = " + yuan + " CNY");
+            won = amount * 23.46;
+            System.out.println("Peos to Won = " + won + " WON");
+            
+        }else if(menu == 2){ //Dollars
+            php = amount * 55.354;
+            System.out.println("Dollars to Peso = " + php + " PHP");
+            yen = amount * 132.10; 
+            System.out.println("Dollars to Yen =  " + yen + " JPY");
+            yuan = amount + 6.739 ;
+            System.out.println("Dollars to Yuan =  " + yuan + " CHY");
+            won = amount * 1300.70;
+            System.out.println("Dollars to Won =  " + won + " KRW");
+            
+        }else if(menu == 3){//Yen
+            php = amount * 0.41902;
+            System.out.println("Yen to Peso = " + php + " PHP");
+            dollar = amount * 0.0075697;
+            System.out.println("Yen to Dollars = " + dollar + " USD");
+            yuan = amount * 0.051013;
+            System.out.println("Yen to Yuan = " + yuan + " CHY");
+            won = amount * 9.8456;
+            System.out.println("Yen to Won = " + won + " KRW");
+            
+        }else if(menu == 4){//Yuan
+            php = amount * 8.214;
+            System.out.println("Yuan to Peso = " + php + " PHP");
+            dollar = amount * 0.14839;
+            System.out.println("Yuan to Dollars = " + dollar + " USD");
+            yen = amount * 19.603;
+            System.out.println("Yuan to Yen = " + yen + " JPY");
+            won = amount * 193.00;
+            System.out.println("Yuan to Won = " + won + " KRW");
+            
+        }else if(menu == 5){//Won
+            php = amount * 0.042558;
+            System.out.println("Won to Peso = " + php + "PHP");
+            dollar = amount * 0.00076884;
+            System.out.println("Won to Dollar = " + dollar + "USD");
+            yen = amount * 0.10157;
+            System.out.println("Won to Yen = " + yen + "CNY");
+            yuan = amount * 0.0051812;
+            System.out.println("Won to Yuan = " + yuan + "JPY");
+            
+        }else{
+            System.out.println("Invalid Input");
+        }
+        System.out.println();
+        System.out.println("Done!");
+    }
+	public static void main(String[] args) {
+		Scanner myScan = new Scanner(System.in);
+		int menu; char choice;
+		
+		do{
+		    System.out.println("***************************************");
+		    System.out.println("F.I.N.A.N.C.I.A.L - C.A.L.C.U.L.A.T.O.R");
+		    System.out.println("***************************************");
+		
+		    System.out.println("Saving Calculator       [1]"
+		                   + "\nLoan Calculator         [2]"
+		                   + "\nInvestment Calculator   [3]"
+		                   + "\nCurrency Converter      [4]"
+		                   + "\nExit Program            [5]");
+		
+		    System.out.println();
+		    System.out.print("Choose from the menu above: ");
+	    	menu = myScan.nextInt();
+		
+		    switch(menu){
+		        case 1:
+		            try{
+		               savings(); 
+		            }catch(Exception e){
+		                System.out.println("Error!");
+		            }
+		            break;
+		        case 2:
+		            try{
+		               loan();
+		            }catch(Exception e){
+		                System.out.println("Error!");
+		            }
+		            break;
+		        case 3:
+		            try{
+		               investment();
+		            }catch(Exception e){
+		                System.out.println("Error!");
+		            }
+		            break;
+		        case 4:
+		            try{
+		               currency();
+		            }catch(Exception e){
+		                System.out.println("Error!");
+		            }
+		            break;
+		        case 5:
+		            System.out.println("Done!");
+		            System.exit(0);
+		            break;
+		        default:
+		            break;
+		}
+		      
+        System.out.println();
+		System.out.print("Do you want to try again? Y/N: ");
+		choice = myScan.next().charAt(0);
+		}while(choice == 'Y' | choice == 'y');
+		    System.out.println("Done!");
+	}
+}
+
+
+
+
+
+
+
