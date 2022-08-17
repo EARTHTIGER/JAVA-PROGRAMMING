@@ -1,0 +1,98 @@
+/******************************************************************************
+INSTRUCTIONS:
+
+Create a class student that has the attributes:
+
+* firstName
+* lastName
+* year
+* course
+* section
+* midtermGrade
+* finalGrade
+
+Create a constructor for the class, create the following object methods:
+* IntroduceSelf()
+    - Outputs the Full name, Course, Year, and Section of the student
+    
+* evaluatedGrade()
+    - Average the midterm and final Grade output their average and their stading
+    if they are an honor, passed, or failed.
+    
+    Grade Criteria:
+    above 100 : invalid Grade
+    98 - 100 : with highest honors
+    95 - 97.99 : with high honors
+    90 - 94.99 : with honors
+    75 - 89.99 : passed
+    below 75 : failed
+*******************************************************************************/
+
+class student{
+    
+    String firstName, lastName, year, course, section;
+    float midtermGrade, finalGrade;
+    
+    student(String afirstName, String alastName,
+            String ayear, String acourse, String asection, 
+            float amidtermGrade, float afinalGrade){
+        
+        this.firstName = afirstName;
+        this.lastName = alastName;
+        this.year = ayear;
+        this.course = acourse;
+        this.section = asection;
+        this.midtermGrade = amidtermGrade;
+        this.finalGrade = afinalGrade;
+    }
+    
+    void title(){
+        System.out.println("***************************");
+        System.out.println("   S.T.U.D.E.N.T - D.A.T.A   ");
+        System.out.println("***************************");
+        System.out.println();
+    }
+    
+    void IntroduceSelf(){
+        System.out.println("STUDENT INFORMATION*");
+        System.out.println("Name: " + firstName + lastName);
+        System.out.println("Course & Year: " + course  + " - " + year);
+        System.out.println("Section : " + section);
+        System.out.println();
+    }
+    
+    void evaluatedGrade(){
+        
+        System.out.println("STUDENT EVALUATION*");
+        System.out.println("Midterm grade: " + midtermGrade);
+        System.out.println("Final grade: " + finalGrade);
+        
+        float average = (midtermGrade + finalGrade) /2;
+        System.out.println("Average: " + average);
+        
+        String remarks = "";
+        
+        if(average > 100) remarks = "Invalid Grade";
+        else if (average >= 98) remarks = "with highest Honors";
+        else if (average >= 95) remarks = "with high Honors";
+        else if (average >= 90) remarks = "with  Honors";
+        else if (average >= 75) remarks = "Passed ";
+        else remarks = "Failed";
+        
+        System.out.println("Marks: " + remarks);
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		student myStudent = new student("SQU", "ID", "2", "BSIT", "CITCS 2E", 80.1f, 94.3f );
+		
+		myStudent.title();
+		myStudent.IntroduceSelf();
+		myStudent.evaluatedGrade();
+	}
+}
+
+

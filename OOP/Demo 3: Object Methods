@@ -1,0 +1,57 @@
+/*OBJECT METHODS 
+
+Are METHODS declared inside an OBJECT CLASS.
+OBJECT METHODS are considered as the OBJECT's PURPOSE
+*/
+
+class character{
+    String name, dialog, role;
+    int hp, mp, lvl;
+    
+    character (String aname, String adialog,String arole, int ahp, int amp, int alvl){
+        this.name = aname;
+        this.dialog = adialog;
+        this.role = arole;
+        this.hp = ahp;
+        this.mp = amp;
+        this.lvl = alvl;
+    }
+    
+    void introduce(){
+        System.out.println("Hero name: " + name);
+		System.out.println("Description: " + dialog);
+		System.out.println("Role: " + role);
+		System.out.println("Health: " + hp);
+		System.out.println("Mana: " + mp);
+		System.out.println("Level: " + lvl);
+		System.out.println();
+    }
+    
+    void heroSpeach(){
+        System.out.println("SQUID: ");
+        System.out.println("I rule the sea, anyone who enters shall die!");
+        System.out.println();
+    }
+    
+    void villainSpeach(){
+        System.out.println("WILD BEAST: ");
+        System.out.println("I will avenge her, I shall conquer that sea!");
+        System.out.println();
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+		character hero = new character("SQUID", "SEA-GUARDIAN", "Protagonist", 200, 80, 10);
+		character villain =  new character("WILD BEAST", "PIRATES OF THE SEA", "Antagonist", 200, 50, 10);
+		
+		hero.introduce();
+		villain.introduce();
+		hero.heroSpeach();
+		villain.villainSpeach();
+	}
+}
+
+

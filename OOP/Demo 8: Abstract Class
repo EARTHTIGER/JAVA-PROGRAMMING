@@ -1,0 +1,73 @@
+/* ABSTRACTION
+
+An OOP technique that hides certain details and only shows the 
+important information.
+
+It can be achieved in 2 ways: 
+* Abstract Classes (Uses Abstract Modifiers)
+*Interface (Uses Implement Keyword)
+
+ABSTRACT CLASS:
+It cannot be instantiated, to access it to you need to 
+inherit it from another class
+
+ABSTRACT METHODS:
+Can only be declared inside an abstract class it is a method 
+without a body and it needs to be overriden in the subclass 
+of the abstract class
+*/
+
+//Abstraction
+abstract class Animal{ //ABSTRACT
+    
+    abstract void makeSound(); //ABSTRACT
+    
+    String name;
+    
+    void showName(){ //ENCAPSULATION
+        System.out.println("Name: " + name);
+    }
+    
+    void setName(String name){ // ENCAPSULATION
+        this.name = name;
+    }
+}
+
+class Cat extends Animal{
+    
+    void makeSound(){
+        System.out.println("Cat says: Meow!!!");
+    }
+    
+}
+
+class Dog extends Animal{
+    
+    void makeSound(){
+        System.out.println("Dog says: Arfff!!!");
+    }
+}
+
+//you can add all the techniuqes though
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		//CONCRETE IDEA
+		Animal D = new Dog();
+		Animal C = new Cat();
+		
+		//ABSTRACT
+		D.makeSound();
+		C.makeSound();
+		
+		//ENCAPSULATED
+		D.setName("Doggy");
+		C.setName("Catty");
+		D.showName();
+		C.showName();
+	}
+}
+
+

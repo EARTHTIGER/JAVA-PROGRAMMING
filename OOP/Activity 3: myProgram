@@ -1,0 +1,69 @@
+/*
+Activity 3: Apply Polymorphism on your own, create any class that could act as
+the super class and make subclasses that will inherit from that super class.
+*/
+
+//BSIT Majors program
+
+class BSIT{
+    
+    void description(){
+        System.out.println("Majors under the course of BSIT");
+        System.out.println();
+    }
+    
+}
+
+class infoTech extends BSIT{
+    
+    void description(){
+        System.out.println("BSIT : ");
+        System.out.println("Bachelor of Science in Information Technology");
+        System.out.println("[More on : Networks and Security even hacking are possible]");
+        System.out.println();
+    }
+}
+
+class comSci extends BSIT{
+    
+    void description(){
+        System.out.println("BSCS : ");
+        System.out.println("Bachelor of Science in Computer Science");
+        System.out.println("[More on : Programming, Game Developement, "
+                        +  "Website Development, System Developments]");
+        System.out.println();
+    }
+    
+}
+
+class dataAnalytics extends BSIT{
+    
+    void description(){
+        System.out.println("BSDA : ");
+        System.out.println("Bachelor Science in Data Analytics");
+        System.out.println("[More on : Data handling, Database, Data gathering, "
+                        +  "Data Cleaning]");
+        System.out.println();
+    }
+    
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		BSIT course = new BSIT();
+		
+		BSIT IT = new BSIT();
+		BSIT inT = new infoTech();
+		BSIT CS = new comSci();
+		BSIT DA = new dataAnalytics();
+		
+		IT.description();
+		inT.description();
+		CS.description();
+		DA.description();
+		
+	}
+}
+
+

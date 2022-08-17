@@ -1,0 +1,121 @@
+/*ABSTRACTION 
+
+An OOP techniuqe that hides certain details and only shows the
+important information.
+
+It can be achieved in 2 ways;
+*Abstract Classes (Uses 2 abstract modifiers)
+*Interfaces (Uses implement Keyword)
+
+
+INTERFACE
+
+it is a full abstract class that is imlemented in other classes.
+
+any method you declare would be an abstract method by default you can use the
+default modifier to create a method with body the method would be static.
+
+any variable that you declare would be static and final.
+
+IMPLEMENTS Keyword
+
+used after the class name so that we can implement an interface in that 
+certain class to override every method insise the interface.
+
+PS. We can implement 1 or more interfaces in each class.
+*/
+
+interface waterAnimal{
+    
+    abstract void swim();
+}
+
+interface landAnimal{
+    
+    abstract void walk();
+}
+
+interface airAnimal{
+    
+    abstract void fly();
+}
+
+interface Animal{
+    
+    abstract void makeSound();
+}
+
+//DOG
+class Dog implements Animal, landAnimal, waterAnimal{
+    
+    public void makeSound(){
+        System.out.println("arfff!!!");
+    }
+    
+    public void walk(){
+        System.out.println("Dog can walk and run on land");
+    }
+    
+    public void swim(){
+        System.out.println("Dog can also swim on water");
+        System.out.println();
+    }
+}
+
+//BIRD
+class Bird implements Animal, airAnimal, landAnimal{
+    
+    public void makeSound(){
+        System.out.println("Tweet Tweet!!!");
+    }
+    
+    public void fly(){
+        System.out.println("Birds can fly on air");
+    }
+    
+    public void walk(){
+        System.out.println("Bird can also walk and hop on land");
+        System.out.println();
+    }
+}
+
+//FROG
+class Frog implements Animal, waterAnimal, landAnimal{
+    
+    public void makeSound(){
+        System.out.println("Ribbik!!!");
+    }
+    public void swim(){
+        System.out.println("Frog can swim on water");
+    }
+    
+    public void walk(){
+        System.out.println("Frog can also walk and hop on land");
+        System.out.println();
+    }
+}
+
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		Dog D = new Dog();
+		Bird B = new Bird();
+		Frog F = new Frog();
+		
+		D.makeSound();
+		D.walk();
+		D.swim();
+		
+		B.makeSound();
+		B.fly();
+		B.walk();
+		
+		F.makeSound();
+		F.swim();
+		F.walk();
+	}
+}
+
+

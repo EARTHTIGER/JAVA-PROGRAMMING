@@ -1,0 +1,79 @@
+/*OVERLOADING CONSTRUCTORS
+An OOP technique used to create multiple constructors with different arguments,
+it is used to cope up with the needs of a certain instance of an object.
+
+*This is the same as method overloading
+*/
+class Employee{
+    
+    /*You can make these private and just add getters and setters, but
+    for this demo it only focuses on OVERLOADING CONSTRUCTION*/
+     String firstName, lastName;
+     String title, address, gender;
+     int age;
+    
+    Employee(String firstName, String lastName, String title,
+            String address, String gender, int age){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.title = title;
+        this.address = address;
+        this.gender = gender;
+        this.age = age;
+    }
+    
+    //Overloading Constructors
+    Employee(String firstName, String lastName, String title){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.title = title;
+        address = "N/A";
+        gender = "N/A";
+        age = 0;
+    }
+    
+    //Overloading Constructors with no attributes
+    Employee(){
+        firstName = "N/A";
+        lastName = "N/A";
+        title = "N/A";
+        address = "N/A";
+        gender = "N/A";
+        age = 0;
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		Employee e = new Employee("Squ", "id", "Hacker","Venus" , "Male", 23);
+		Employee e1 = new Employee("Squ", "id", "Hacker"); // Overloaded Constructors
+		Employee e2 = new Employee(); // Overloading Constructors with no attributes
+		
+		//Employee 
+		System.out.println("Name: " + e.firstName + e.lastName);
+		System.out.println("Profession: " + e.title);
+		System.out.println("Address: " + e.address);
+		System.out.println("Gender: " + e.gender);
+		System.out.println("Age: " + e.age);
+		System.out.println();
+		
+		//Employee 1
+		System.out.println("Name: " + e1.firstName + e.lastName);
+		System.out.println("Profession: " + e1.title);
+		System.out.println("Address: " + e1.address);
+		System.out.println("Gender: " + e1.gender);
+		System.out.println("Age: " + e1.age);
+		System.out.println();
+		
+		//Employee 2
+		System.out.println("Name: " + e2.firstName);
+		System.out.println("Profession: " + e2.title);
+		System.out.println("Address: " + e2.address);
+		System.out.println("Gender: " + e2.gender);
+		System.out.println("Age: " + e2.age);
+		System.out.println();
+	}
+}
+
+

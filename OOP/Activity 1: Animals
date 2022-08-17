@@ -1,0 +1,43 @@
+
+import java.util.Scanner;
+
+class petNumber{
+    
+    int animalNumbers;
+    
+    petNumber(int aNumber){
+        
+        this.animalNumbers = aNumber;
+    }
+}
+
+class petName{
+    
+    String animalName;
+    
+    petName(String aName){
+        
+        this.animalName = aName;
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner myScan = new Scanner(System.in);
+		
+		System.out.print("How many pets do you have? ");
+		int numPets = myScan.nextInt();
+		petNumber PNum = new petNumber(numPets);
+		
+		System.out.println();
+		System.out.print("Input one of your Pet Name: ");
+		String name = myScan.nextLine();
+		
+		petName PN = new petName(name);
+	}
+}
+
+
+
+

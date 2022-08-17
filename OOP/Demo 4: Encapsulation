@@ -1,0 +1,63 @@
+/* ENCAPSULATION
+Is an OOP technique used to HIDE DATA from direct access.
+just change the attributes from PUBLIC to PRIVATE.
+
+
+GETTERS and SETTERS
+Are METHODS used to GET and SET ENCAPSULATED VARIABLES.
+
+SETTERS - a method used to SET encapsulated variables.
+GETTERS - is a method used to get encapsulated variables.
+
+*/
+
+class User{
+   private int userID; //Encapsulated / PRIVATE attreibutes (Not accessible by other class)
+   private String userName;
+   private String firstName, lastName;
+   
+   User(int myuserID, String myuserName, String myfirstName, String mylastName){
+       this.userID = myuserID; //Constructors (this keyword)
+       this.userName = myuserName;
+       this.firstName = myfirstName;
+       this.lastName = mylastName;
+   }
+   
+   int getUserID(){ //getting encapsulated variables
+       return userID;
+   }
+   
+   String getUserName(){ 
+       return userName;
+   }
+   
+   void setFirstName(String firstName){ //setting encapsulated variables
+       this.firstName = firstName;
+   }
+   
+    void setLastName(String lastName){ 
+       this.lastName = lastName;
+   }
+   
+   void printDetails(){ //Print value for encapsulated value with setters
+       System.out.println("Student Name: " + firstName + " " + lastName);
+   }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    User u = new User(8162022, "SQUID", "bot", "bot"); //Instantiation
+        
+        int id = u.getUserID();//getting encapsulated variables
+        String UserName = u.getUserName();
+        u.setFirstName("Squ");//setting encapsulated variables
+        u.setLastName("id");
+        
+        System.out.println("Student ID: " + id); //Print encapsulated value with getters
+        System.out.println("User Name: " + UserName);
+        u.printDetails();//Print method / function
+        
+	}
+}
+
+

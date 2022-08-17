@@ -1,0 +1,49 @@
+/*Constructors
+Is the METHOD called when you INSTANTIATE a CLASS / CREATE an OBJJECT. Used to
+INITIALIZE the ATTRIBUTES of an OBJECT or run a block of code when
+an object is created.
+
+Keywords:
+
+this - ENABLES you to ACCESS GLOBAL VARIABLES inside the CLASS if you have the
+       SAME VARIABLE NAMES in a PARAMETER.
+*/
+
+
+//Class creation
+ class product{
+    String name;
+    float price;
+    
+    //Parameters
+    product(String aname, float aprice){
+        
+        //Accessing global variables
+        this.name = aname;
+        this.price = aprice;
+        
+        //Reading attributes
+        System.out.println("Product name: " + name);
+        System.out.println("Product price: " + price);
+        System.out.println();
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		//Class instantion and print parameters
+		product p1 = new product ("Milk", 80.75f);
+		product p2 = new product ("Tea", 46.10f);
+		product p3 = new product ("Coffee", 60.25f);
+		product p4 = new product ("Juice", 40.05f);
+		product p5 = new product ("Coke", 30.10f);
+		product p6 = new product ("Pepsi", 30.10f);
+		product p7 = new product ("Royal", 30.10f);
+		product p8 = new product ("Sprite", 30.10f);
+		
+	}
+}
+
+

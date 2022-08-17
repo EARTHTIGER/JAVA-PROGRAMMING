@@ -1,0 +1,40 @@
+/* POLYMORPHISM
+
+POLY means MANY and MORPH means "Take Different Forms"
+
+an OOP technique that utilizes inheritance to create 1 class and make several
+classes inherit from that class so that it can take many forms.
+*/
+
+class Animal{ //Super Class
+    
+    void makeSound() {
+        System.out.println("Pls.Override this function");
+    }
+}
+
+class Dog extends Animal{ //Sub Class
+    
+    void makeSound(){
+        System.out.println("Dog says, ARF !!!");
+    }
+}
+
+class Cat extends Animal{ //Sub Class
+    void makeSound(){
+        System.out.println("Cat says, MEOW !!!");
+    }
+    
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Animal D = new Dog();
+		Animal C = new Cat();
+		
+		D.makeSound();
+		C.makeSound();
+	}
+}
+
+

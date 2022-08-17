@@ -1,0 +1,60 @@
+//Classes and Objects DEMO
+
+/*CLASSES DESCRIPTION
+
+acts as a blue print for an object that you want to implement in your program.
+It contains all the ATTRIBUTES and METHODS that your desired OBJECT should have.
+*/
+
+/*OBJECTS DESCRIPTION
+
+created by INSTANTIATING a CLASS, it is anything that has an ATTRIBUTE and a
+PURPOSE.
+
+Example: [PERSON, FURNITURE, FOOD, and Etc.]
+*/
+
+//Class creation - Blue print
+class person{
+    String firstName, lastName;
+    char gender;
+    int age;
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+		//Class instantiation
+		person P = new person();
+		
+		// writing attributes
+		P.firstName = "SQU";
+		P.lastName = "ID";
+		P.gender = 'M';
+		P.age = 23;
+		
+		// reading attributes
+		System.out.println("Name: " + P.firstName + P.lastName);
+		System.out.println("Gender: " + P.gender);
+		System.out.println("Age: " + P.age);
+		
+		
+		//Your turn - create a new Person
+		
+        person P1 = new person();
+        
+        P1.firstName = "JADE";
+        P1.lastName = "BARRET";
+        P1.gender = 'F';
+        P1.age = 26;
+        
+        System.out.println();
+        System.out.println("Name: " + P1.firstName + " " + P1.lastName);
+		System.out.println("Gender: " + P1.gender);
+		System.out.println("Age: " + P1.age);
+        
+	}
+}
+
+

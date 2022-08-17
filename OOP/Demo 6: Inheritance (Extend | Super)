@@ -1,0 +1,101 @@
+/*INHERITANCE
+An OOP technique used to inherit attributes and methods
+from one class to another.
+
+SUPERCLASS
+The class where we will inherit the attributes and methods
+
+SUBCLASS
+The class who will inherit the attributes and methods from superclass
+
+SUPER keyword
+can only be used by a subclass and is used to call their superclass so we can
+access their constructors, attributes and methods.
+*/
+
+//EXTENDS KEYWORD
+class Person{
+    String name, gender;
+    int age;
+    
+    void checkStatus(){
+        System.out.println("Name: " + name);
+        System.out.println("Gender: " + gender);
+        System.out.println("Age: " + age);
+        System.out.println();
+    }
+}
+//Toddler will enherits the attributes of Person using the EXTENDS keyword
+class Toddler extends Person{ 
+    
+    void drink(){
+        /*Toddler can inherit / do what the Person class can do, but Person class
+        cannot do what the Toddler class can do.*/
+        System.out.println("Drinking milk");
+        System.out.println();
+    }
+}
+
+//OVERRIDING CLASS
+class Parent{
+    String color, skill;
+    float height;
+    
+    Parent(String color, String skill, float height){
+        this.color = color;
+        this.skill = skill;
+        this.height = height;
+    }
+    void Info(){
+        System.out.println("Skin color: " + color);
+        System.out.println("Skills: " + skill);
+        System.out.println("Height: " + height);
+        System.out.println();
+    }
+}
+
+class Child extends Parent{
+    
+    String hobbies;
+    
+    Child (String color, String skill, float height, String hobbies){
+        super(color, skill, height); //Implementing the super keyword
+        
+        this.hobbies = hobbies;
+    }
+    
+    void Hobby(){
+        System.out.println("Hobbies: " + hobbies);
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		//EXTENDS KEYWORD
+		Person P = new Person();
+		Toddler T = new Toddler();
+		
+		P.name = "SQUID";
+		P.gender = "Male";
+		P.age = 23;
+		
+		T.name = "Baby";
+		T.gender = "Female";
+		T.age = 3;
+		
+		P.checkStatus();
+		T.checkStatus();
+		T.drink();
+		
+		//OVERRIDING
+		Parent Prt = new Parent("Light Brown", "Hacker", 5.10f);
+		Child Crt = new Child("LIght Brown", "Programmer", 6f, "Surfing Websites");
+		Prt.Info();
+		Crt.Info();
+		Crt.Hobby();
+	}
+}
+
+
+
